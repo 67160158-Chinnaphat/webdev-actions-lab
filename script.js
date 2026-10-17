@@ -1,5 +1,6 @@
 document.querySelector('#helloBtn').addEventListener('click', () => {
-  document.querySelector('#status').textContent = 'Hello from GitHub Pages!';
+  document.querySelector('#status').textContent =
+    'สวัสดีครับ ผมชินภัทร เบลเลอร์ รหัส 67160158 | คณะวิทยาการสารสนเทศ สาขา AAI | งานอดิเรก: เตะฟุตบอล ⚽';
 });
 
 document.querySelector('#themeBtn').addEventListener('click', () => {
