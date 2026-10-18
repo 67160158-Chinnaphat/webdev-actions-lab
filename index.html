@@ -3,41 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ชินภัทร เบลเลอร์ | My GitHub Pages Lab</title>
+  <title>ชินภัทร เบลเลอร์ | World Cup Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="card">
+
+    <!-- ฉากสนามฟุตบอล: ไฟสปอตไลต์ สนามหญ้า ประตู ลูกบอล -->
+    <svg class="banner" viewBox="0 0 600 170" role="img" aria-label="สนามฟุตบอล ประตู และลูกฟุตบอล">
+      <defs>
+        <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0b1f4d"/>
+          <stop offset="1" stop-color="#2a5db0"/>
+        </linearGradient>
+      </defs>
+      <rect width="600" height="170" fill="url(#night)"/>
+      <!-- ไฟสปอตไลต์ -->
+      <g fill="#fff6c2">
+        <circle cx="60" cy="26" r="9"/><circle cx="82" cy="26" r="9"/>
+        <circle cx="518" cy="26" r="9"/><circle cx="540" cy="26" r="9"/>
+      </g>
+      <path d="M50 36 L10 105 H130 Z" fill="#fff6c2" opacity=".12"/>
+      <path d="M550 36 L470 105 H590 Z" fill="#fff6c2" opacity=".12"/>
+      <!-- อัฒจันทร์ -->
+      <rect y="78" width="600" height="28" fill="#13306b"/>
+      <g fill="#ffd23f" opacity=".85">
+        <circle cx="30" cy="90" r="2"/><circle cx="70" cy="86" r="2"/><circle cx="120" cy="92" r="2"/>
+        <circle cx="190" cy="88" r="2"/><circle cx="260" cy="93" r="2"/><circle cx="340" cy="87" r="2"/>
+        <circle cx="410" cy="92" r="2"/><circle cx="480" cy="86" r="2"/><circle cx="560" cy="91" r="2"/>
+      </g>
+      <!-- สนามหญ้า -->
+      <rect y="106" width="600" height="64" fill="#1f9d55"/>
+      <g fill="#27b361">
+        <rect x="0" y="106" width="75" height="64"/><rect x="150" y="106" width="75" height="64"/>
+        <rect x="300" y="106" width="75" height="64"/><rect x="450" y="106" width="75" height="64"/>
+      </g>
+      <line x1="300" y1="106" x2="300" y2="170" stroke="#fff" stroke-width="2" opacity=".8"/>
+      <ellipse cx="300" cy="150" rx="46" ry="14" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/>
+      <!-- ประตู -->
+      <g stroke="#fff" fill="none">
+        <path d="M470 150 V108 H560 V150" stroke-width="4"/>
+        <path d="M478 112 V148 M490 112 V148 M502 112 V148 M514 112 V148 M526 112 V148 M538 112 V148 M550 112 V148 M474 124 H556 M474 136 H556" stroke-width="1" opacity=".55"/>
+      </g>
+      <!-- ลูกฟุตบอล -->
+      <g class="ball" transform="translate(150 128)">
+        <circle r="22" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+        <polygon points="0,-9 8.6,-2.8 5.3,7.3 -5.3,7.3 -8.6,-2.8" fill="#1a1a1a"/>
+        <g stroke="#1a1a1a" stroke-width="2">
+          <line x1="0" y1="-9" x2="0" y2="-21"/><line x1="8.6" y1="-2.8" x2="20" y2="-6.5"/>
+          <line x1="5.3" y1="7.3" x2="12" y2="17"/><line x1="-5.3" y1="7.3" x2="-12" y2="17"/>
+          <line x1="-8.6" y1="-2.8" x2="-20" y2="-6.5"/>
+        </g>
+      </g>
+      <text x="300" y="62" text-anchor="middle" class="goal-text">GOAL!</text>
+    </svg>
+
     <h1>My Web Development Lab</h1>
-    <p>ชื่อ: ชินภัทร เบลเลอร์ | รหัสนิสิต: 67160158</p>
-    <p id="status">ยินดีต้อนรับสู่เว็บของคนที่หล่อที่สุดในโลก!</p>
+    <p class="who">ชื่อ: ชินภัทร เบลเลอร์ | รหัสนิสิต: 67160158</p>
+    <p id="status">ยินดีต้อนรับสู่เว็บของคนที่หน้าตาดีที่สุดในโลก!</p>
     <div class="buttons">
-      <button id="helloBtn">Say Hello</button>
+      <button id="helloBtn">⚽ คนใต้ native</button>
       <button id="themeBtn">🌙 สลับธีม</button>
     </div>
 
+    <div id="info" class="hidden">
     <section>
-      <h2>About Me</h2>
-      <p>สวัสดีครับ ผม นายชินภัทร เบลเลอร์ ศึกษาอยู่คณะวิทยาการสารสนเทศ สาขา AAI
-         งานอดิเรกคือการเตะฟุตบอล</p>
+      <h2>🏟️ About Me</h2>
+      <p>สวัสดีครับน้องบ่าว พี่หลวงชื่อนายชินภัทร เบลเลอร์ ชื่อเล่นจูเนียร์ กำลังศึกษาอยู่คณะวิทยาการสารสนเทศ มหาวิทยาลัยบูรพา
+         งานอดิเรกคือทวงค่าเปียแชร์ให้ยาย</p>
     </section>
 
     <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>ชอบออกแบบและสร้างสิ่งประดิษฐ์ใหม่ๆ</li>
-        <li>ชอบสร้างระบบการทำงานต่างๆ ด้วย Python</li>
-      </ul>
+      <h2>🏆 Skills</h2>
+      <p class="skill-title">💻 Programming &amp; Systems</p>
+      <div class="tags">
+        <span>Python</span>
+        <span>System Automation</span>
+        <span>System Design</span>
+      </div>
+      <p class="skill-title">🔌 Innovation &amp; Hardware</p>
+      <div class="tags">
+        <span>IoT</span>
+        <span>Prototyping</span>
+        <span>Creative Design</span>
+      </div>
+      <p class="skill-title">🌐 Web &amp; DevOps</p>
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Git &amp; GitHub</span>
+        <span>GitHub Actions (CI/CD)</span>
+      </div>
     </section>
 
     <section>
-      <h2>Contact</h2>
+      <h2>📣 Contact</h2>
       <ul>
         <li>Email: <a href="mailto:67160158@go.buu.ac.th">67160158@go.buu.ac.th</a></li>
         <li>GitHub: <a href="https://github.com/67160158-Chinnaphat" target="_blank" rel="noopener">67160158-Chinnaphat</a></li>
         <li>Instagram: <a href="https://www.instagram.com/ch_junior15" target="_blank" rel="noopener">ch_junior15</a></li>
       </ul>
     </section>
+    </div>
+
+    <p class="footer">⚽ Full time! Deployed by GitHub Actions ⚽</p>
   </main>
   <script src="script.js"></script>
 </body>

@@ -1,17 +1,85 @@
-body { font-family: system-ui, sans-serif; background: #eef4fb; color: #1e2a38;
-  margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 0; }
-.card { background: white; padding: 40px; border-radius: 18px; max-width: 560px; width: 90%;
-  box-shadow: 0 12px 32px #1e3a5f20; text-align: center; }
-section { text-align: left; margin-top: 24px; padding-top: 16px; border-top: 1px solid #d5e0ee; }
-section h2 { margin: 0 0 8px; color: #1769aa; }
-ul { padding-left: 20px; margin: 0; }
-a { color: #1769aa; }
-.buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-button { background: #1769aa; color: white; border: 0;
-  padding: 12px 22px; border-radius: 8px; cursor: pointer; }
+:root {
+  --pitch: #1f9d55;
+  --pitch-light: #27b361;
+  --navy: #0b1f4d;
+  --gold: #ffc72c;
+  --red: #d7263d;
+  --text: #14233f;
+  --card: #ffffff;
+  --panel: #f1f7ee;
+  --tag-bg: #e3f6e9;
+  --tag-text: #0f6b36;
+}
 
-/* Dark theme */
-body.dark { background: #121821; color: #e6edf5; }
-body.dark .card { background: #1c2533; box-shadow: 0 12px 32px #00000060; }
-body.dark section { border-top-color: #2f3d52; }
-body.dark section h2, body.dark a { color: #6bb6f0; }
+body {
+  font-family: 'Prompt', system-ui, sans-serif;
+  color: var(--text);
+  margin: 0; min-height: 100vh;
+  display: grid; place-items: center; padding: 24px 0;
+  background: repeating-linear-gradient(90deg, var(--pitch) 0 70px, var(--pitch-light) 70px 140px);
+  background-attachment: fixed;
+}
+
+.card {
+  background: var(--card);
+  max-width: 580px; width: 92%;
+  border-radius: 20px; overflow: hidden;
+  padding: 0 36px 26px;
+  text-align: center;
+  border: 4px solid var(--gold);
+  box-shadow: 0 16px 40px #00000050;
+}
+
+.banner { display: block; width: calc(100% + 72px); margin: 0 -36px 8px; }
+.goal-text { font-family: 'Prompt', sans-serif; font-weight: 700; font-size: 34px; fill: var(--gold); letter-spacing: 4px; }
+.ball { animation: kick 1.6s ease-in-out infinite; }
+@keyframes kick {
+  0%, 100% { transform: translate(150px, 128px) rotate(0deg); }
+  50%      { transform: translate(150px, 112px) rotate(180deg); }
+}
+@media (prefers-reduced-motion: reduce) { .ball { animation: none; } }
+
+h1 { margin: 12px 0 4px; color: var(--navy); text-transform: uppercase; letter-spacing: .5px; }
+.who { margin: 4px 0; font-weight: 600; }
+#status { margin: 10px 0 14px; }
+
+.buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+button {
+  font-family: inherit; font-size: 15px; font-weight: 600;
+  background: var(--gold); color: var(--navy); border: 0;
+  padding: 12px 22px; border-radius: 10px; cursor: pointer;
+  box-shadow: 0 4px 0 #c79500;
+  transition: transform .1s, box-shadow .1s;
+}
+button:active { transform: translateY(3px); box-shadow: 0 1px 0 #c79500; }
+#themeBtn { background: var(--navy); color: #fff; box-shadow: 0 4px 0 #050f2a; }
+#themeBtn:active { box-shadow: 0 1px 0 #050f2a; }
+
+section {
+  text-align: left; margin-top: 22px; padding: 14px 16px 16px;
+  background: var(--panel); border-left: 6px solid var(--gold); border-radius: 12px;
+}
+section h2 { margin: 0 0 8px; color: var(--navy); }
+ul { padding-left: 20px; margin: 0; }
+a { color: var(--red); font-weight: 600; }
+
+.skill-title { margin: 12px 0 6px; font-weight: 600; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span {
+  background: var(--tag-bg); color: var(--tag-text);
+  padding: 6px 12px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  border: 1px solid var(--pitch);
+}
+
+.footer { margin: 24px 0 0; font-size: 14px; opacity: .8; }
+.hidden { display: none; }
+
+/* Dark theme: แมตช์ไนท์เกม */
+body.dark {
+  --text: #e8eefb; --card: #0f1c2e; --panel: #ffffff10; --navy: #ffffff;
+  --tag-bg: #12351f; --tag-text: #8ff0b2; --red: #ff6b7d;
+  background: repeating-linear-gradient(90deg, #0a3d22 0 70px, #0d4a29 70px 140px);
+  background-attachment: fixed;
+}
+body.dark #themeBtn { background: #ffffff; color: #0b1f4d; box-shadow: 0 4px 0 #9aa7c4; }
+body.dark .card { box-shadow: 0 16px 40px #000000a0; }

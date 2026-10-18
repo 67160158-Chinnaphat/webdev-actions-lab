@@ -1,6 +1,6 @@
 document.querySelector('#helloBtn').addEventListener('click', () => {
-  document.querySelector('#status').textContent =
-    'สวัสดีครับ ผมชินภัทร เบลเลอร์ รหัส 67160158 | คณะวิทยาการสารสนเทศ สาขา AAI | งานอดิเรก: เตะฟุตบอล ⚽';
+  document.querySelector('#status').textContent = '👋';
+  document.querySelector('#info').classList.remove('hidden');
 });
 
 document.querySelector('#themeBtn').addEventListener('click', () => {
